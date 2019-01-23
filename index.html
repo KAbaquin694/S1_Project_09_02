@@ -29,9 +29,11 @@
     <header>
         <img src="sb_logo.png" alt="The Spice Bowl" />
 
+        <!-- This 'form' element contains 2 input boxes that would be used as a login for the user. The type 'password' ensures that whatever the user types, it will be hidden. -->
+
         <form action=" http://www.example.com/sb/login " id="login" method="POST">
             <input type="text" id="userBox" name="username" placeholder="username" />
-            <input type="text" id="pwdBox" name="password" placeholder="password" />
+            <input type="password" id="pwdBox" name="password" placeholder="password" />
         </form>
 
         <nav> <a id="navicon" href="#"><img src="sb_navicon.png" alt="" /></a>
@@ -48,9 +50,13 @@
     <section>
         <h1>Payment Form</h1>
 
+        <!-- The 'form' element is what contains the main bulk of the information that is in the website to make a form/survey fot the user. The 'legend' element acts as the header of its fieldset. -->
+
         <form action=" http://www.example.com/sb/payment" id="payment" method="POST">
             <fieldset>
                 <legend>Billing Information (required)</legend>
+
+                <!-- This block of code is what creates all of the boxes that the user fills out. By having the 'required' attribute, the user cannot proceed until they fill out the specific input box. The 'label' element signifies which information belongs to which input box.-->
 
                 <label for="fName">First Name</label>
                 <input type="text" name="fName" id="firstBox" required />
@@ -64,6 +70,9 @@
                 <input type="text" name="city" id="stateBox" required />
                 <label for="state">State</label>
                 <input type="text" name="state" id="stateBox" list="stateList" required />
+
+                <!-- This datalist provides an abbreviated list of all the states in the U.S. that the user could choose from. -->
+
                 <datalist id="stateList">
                     <option value="AL"></option>
                     <option value="AK"></option>
@@ -116,6 +125,9 @@
                     <option value="WI"></option>
                     <option value="WY"></option>
                 </datalist>
+
+                <!-- This section of code contains 2 inputs that are required to fill out. These reqiured inputs also have a 'pattern' attribute. This attribute ensures that the user cannot progress unless they have entered the correct information in a certain way (ie: a phone number). -->
+
                 <label for="country">Country</label>
                 <input type="text" name="country" id="countryBox" value="United States" />
                 <label for="zip">ZIP/Postal Code</label>
@@ -125,6 +137,8 @@
             </fieldset>
             <fieldset id="creditCard">
                 <legend>Credit Card (required)</legend>
+
+                <!-- This fieldset is used for selecting the credit card that the user posesses. Within each 'label' element, an 'input' & 'img' element are nested. The 'input' elements all have the type of 'radio' which turns them into radio buttons. Only one button could be selected at a time. Each 'img' element is a picture of a different credit card company. -->
 
                 <fieldset>
                     <label class="cardLabel" for="">
@@ -143,9 +157,13 @@
                         <input type="radio" name="cCard" value="visa" required />
                         <img src="sb_visa.png" alt="" /></label>
                 </fieldset>
+
+                <!-- This 'input' element has a pattern that resembles a credit card number, so that the user must insert a set of numbers that resemble so. -->
+
                 <label for="cardBox">Credit Card Number</label>
                 <input type="text" id="cardBox" name="cardNumber" required pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$" />
 
+                <!-- This section of code has 2 seleciton lists & a label. The label has the text 'Expiration Date' so that the user would know to insert their card's day of expiration. The first selection list is for selection the month in which the user's credit card expires. The second list is for selecting the expiration year, from 2017 to 2021. -->
 
                 <label for="monthList">Expiration Date</label>
                 <select name="cardMonth" id="monthList" required>
@@ -173,15 +191,15 @@
                     <option value="">2021</option>
                 </select>
 
+                <!-- This block of code is for a set of 3 numbers, & cannot go higher nor lower than 3. -->
+
                 <label for="cscBox">CSC</label>
                 <input type="text" id="cscBox" required pattern="^\d{3}$" max="3" placeholder="nnn" />
             </fieldset>
 
+            <!-- This button element contains an 'img' element that provides an image of an arrow with the text 'next'. So when the user clicks on the image, they will go the next page/step. -->
 
-
-
-
-            <button type="button">
+            <button type="submit">
                 <img src="sb_button.png" alt="next" />
             </button>
 

@@ -13,14 +13,20 @@
 
 /* Validation Styles */
 
+/* This block of code is specifically for all 'input' elements, except for the ones with the type of 'radio'. For the specified 'input' elements, the background color would change to the given rgb value. The 'focus' psuedo class changes the color of the elements when selected. */
+
 input:not([type='radio']):focus {
     background-color: rgb(255, 218, 165);
 }
 
+/* Similar to the code above, This piece of code is for every 'input' element except for the ones with the type of 'radio'. However, the elements' background would have an image of a green checkmark that would not repeat & would be located at the right of its container & change to a differnt color. This section of code also has a 'valid' psuedo class. This psuedo class determines if the field values pass via validation tests. */
+
 input:not([type='radio']):focus:valid {
-    background-color: rgb(215, 255, 215) url(sb_valid.png) right/contain no-repeat;
+    background: rgb(215, 255, 215) url(sb_valid.png) right/contain no-repeat;
 }
 
+/* Almost completely identical to the style rule above, this piece of code replaces the 'valid' psuedo class & image with the 'invalid' psuedo class & provides a different color to the background. */
+
 input:not([type='radio']):focus:invalid {
-    background-color: rgb(255, 245, 215) url(sb_invalid.png) right/contain no-repeat;
+    background: rgb(255, 245, 215) url(sb_invalid.png) right/contain no-repeat;
 }
